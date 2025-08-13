@@ -22,7 +22,7 @@ CheckMate follows a simple workflow:
 
 ## Demonstration
 
-*(TBA)*
+![Animation](https://github.com/user-attachments/assets/e90e19ca-6d71-4d52-8253-8edc25f52f77)
 
 ## Usage
 
