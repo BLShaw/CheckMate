@@ -51,34 +51,39 @@ flowchart LR
     A([Start]) --> B["Load tasks from tasks.txt"]
     B --> C["Display Menu"]
     
-    C -->|"1. Add Task"| D["Enter task title"]
-    D --> E["Generate new ID"]
-    E --> F["Add task to memory"]
-    F --> G["Confirm addition"]
-    G --> C
-    
-    C -->|"2. View Tasks"| H["Display all tasks"]
+    C --> D["[1] Add Task"]
+    D --> E["Enter task title"]
+    E --> F["Generate new ID"]
+    F --> G["Add task to memory"]
+    G --> H["Confirm addition"]
     H --> C
     
-    C -->|"3. Mark Complete"| I["Enter task ID"]
-    I --> J{"Task exists?"}
-    J -->|Yes| K["Update status to complete"]
-    J -->|No| L["Show error"]
-    K --> M["Confirm completion"]
-    M --> C
-    L --> C
+    C --> I["[2] View Tasks"]
+    I --> J["Display all tasks"]
+    J --> C
     
-    C -->|"4. Delete Task"| N["Enter task ID"]
-    N --> O{"Task exists?"}
-    O -->|Yes| P["Remove task from memory"]
-    O -->|No| Q["Show error"]
-    P --> R["Confirm deletion"]
-    R --> C
-    Q --> C
+    C --> K["[3] Mark Complete"]
+    K --> L["Enter task ID"]
+    L --> M{"Task exists?"}
+    M -->|Yes| N["Update status to complete"]
+    M -->|No| O["Show error"]
+    N --> P["Confirm completion"]
+    P --> C
+    O --> C
     
-    C -->|"5. Exit"| S["Save tasks to file"]
-    S --> T["Display Goodbye"]
-    T --> U([End])
+    C --> Q["[4] Delete Task"]
+    Q --> R["Enter task ID"]
+    R --> S{"Task exists?"}
+    S -->|Yes| T["Remove task from memory"]
+    S -->|No| U["Show error"]
+    T --> V["Confirm deletion"]
+    V --> C
+    U --> C
+    
+    C --> W["[5] Exit"]
+    W --> X["Save tasks to file"]
+    X --> Y["Display Goodbye"]
+    Y --> Z([End])
 ```
 
 ## File Structure
